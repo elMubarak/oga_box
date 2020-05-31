@@ -35,22 +35,49 @@ class _ScheduleDeliveryState extends State<ScheduleDelivery> {
         child: Column(
           children: <Widget>[
             Expanded(
-              flex: 4,
+              flex: 6,
               child: Container(
                 child: Column(
                   children: <Widget>[
                     Container(
                       child: MyCalender(),
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text('From $_startTime'),
-                        SizedBox(
-                          width: 10.0,
+                    Center(
+                      child: Container(
+                        padding: EdgeInsets.all(10.0),
+                        margin:
+                            EdgeInsets.only(left: 25.0, right: 25.0, top: 30),
+                        decoration: BoxDecoration(
+                            color: Color(0xff2193b0).withOpacity(0.5),
+                            borderRadius: BorderRadius.circular(15.0)),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              'start: $_startTime',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(left: 5.0, right: 5.0),
+                              child: Icon(
+                                Icons.arrow_forward,
+                                color: Colors.black54,
+                                size: 20.0,
+                              ),
+                            ),
+                            Text(
+                              'end: $_endTime ',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                          ],
                         ),
-                        Text('To $_endTime '),
-                      ],
+                      ),
                     ),
                   ],
                 ),
